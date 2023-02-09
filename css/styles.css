@@ -34,3 +34,14 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.quantity-div {
+    margin-left: 3rem;
+    margin-top: -1rem;
+}
