@@ -1,5 +1,7 @@
 
 var cartData = [];
+var keyboardData = [];
+var speakerData = [];
 
 var keyboardCounter = 0;
 var speakerCounter = 0;
@@ -12,10 +14,10 @@ function keyboardFun() {
     var keyboardQuantity = document.getElementById('keyboard-quantity').value;
 
 
-    // console.log('keyboard pic ' + keyboardPic );
-    // console.log('keyboard Name ' + keyboardName );
-    // console.log('keyboard price ' + keyboardPrice );
-    // console.log('keyboard quantity ' + keyboardQuantity );
+    console.log('keyboard pic ' + keyboardPic );
+    console.log('keyboard Name ' + keyboardName );
+    console.log('keyboard price ' + keyboardPrice );
+    console.log('keyboard quantity ' + keyboardQuantity );
 
     let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
 
@@ -31,28 +33,48 @@ function keyboardFun() {
     
         };
 
+        
 
         cartData.push(keyboardObj);
+        console.log('This is test first data ' + cartData[0].keyboardName);
+
+        onLoadData(cartData);
 
      } else  {
 
-        cartData.forEach((value) => {
-            
-            value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
-            value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+        keyboardData = cartData.filter((value) => {
+
+            if(value.keyboardName === 'Multimedia KeyBoard') {
+                value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+                value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+                return value;
+            }
         });
 
+        console.log('This is test keyboard data ');
+        keyboardData.forEach((value) => {
+            console.log(value);
+        })
+
+
+        // console.log("This is test keyboard data " + keyboardData[0].keyboardName);
+        // cartData.forEach((value) => {
+            
+        //    
+        // });
+
+        onLoadData(keyboardData);
         
      }
       
-
+    //  console.log("This is keybboard data " +keyboardData);
  
 
     keyboardCounter += 1;
 
 
 
-    onLoadData(cartData);
+    
 
 
 
@@ -92,13 +114,34 @@ function speakerFun() {
 
         cartData.push(speakerObj);
 
+        onLoadData(cartData);
+
      } else  {
 
-        cartData.forEach((value) => {
-            
-            value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
-            value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+
+        speakerData = cartData.filter((value) => {
+
+            if(value.keyboardName === 'Portable speakers') {
+                value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+                value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+                return value;
+            }
         });
+
+
+        console.log('This is test speaker data ');
+        speakerData.forEach((value) => {
+            console.log(value);
+        })
+        
+
+        onLoadData(speakerData);
+
+        // cartData.forEach((value) => {
+            
+        //     value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+        //     value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+        // });
 
         
      }
@@ -110,7 +153,7 @@ function speakerFun() {
 
 
 
-    onLoadData(cartData);
+    
 
 
 
