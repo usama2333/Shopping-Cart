@@ -1,6 +1,8 @@
 
 var cartData = [];
+
 var keyboardCounter = 0;
+var speakerCounter = 0;
 
 function keyboardFun() {
 
@@ -40,22 +42,15 @@ function keyboardFun() {
             value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
         });
 
-        // cartData[0].keyboardQuantity = cartData[0].keyboardQuantity + keyboardQuantity;
-        // cartData[0].keyboardTotalPrice = (cartData[0].keyboardQuantity + keyboardQuantity) * keyboardPrice;
+        
      }
       
 
-    // console.log('keyboardCounter before' + keyboardCounter);  
-
-   
-
-    
-    // console.log('Testing Cart Data');
-    // console.log('test quantity'+cartData[0].keyboardQuantity);
+ 
 
     keyboardCounter += 1;
 
-    // console.log('keyboardCounter after' + keyboardCounter);
+
 
     onLoadData(cartData);
 
@@ -65,6 +60,134 @@ function keyboardFun() {
 
 
 }
+
+
+function speakerFun() {
+
+    var keyboardPic = ` <img class="img" id="speaker-pic" src="./pics/speakers.jpg" alt="Card image cap">`;
+    var keyboardName = document.getElementById('speaker-name').innerText;
+    var keyboardPrice = document.getElementById('speaker-price').innerText;
+    var keyboardQuantity = document.getElementById('speaker-quantity').value;
+
+
+    // console.log('keyboard pic ' + keyboardPic );
+    // console.log('keyboard Name ' + keyboardName );
+    // console.log('keyboard price ' + keyboardPrice );
+    // console.log('keyboard quantity ' + keyboardQuantity );
+
+    let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+
+    if(speakerCounter === 0) {
+
+        var speakerObj = {
+
+            keyboardPic : keyboardPic,
+            keyboardName : keyboardName,
+            keyboardPrice :keyboardPrice,
+            keyboardQuantity : keyboardQuantity,
+            keyboardTotalPrice : keyboardTotalPrice
+    
+        };
+
+
+        cartData.push(speakerObj);
+
+     } else  {
+
+        cartData.forEach((value) => {
+            
+            value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+            value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+        });
+
+        
+     }
+      
+
+ 
+
+    speakerCounter += 1;
+
+
+
+    onLoadData(cartData);
+
+
+
+    document.getElementById('speaker-quantity').value = "";
+
+
+}
+
+
+// function speakerFun() {
+
+//     var speakerPic = ` <img class="img" id="speaker-pic" src="./pics/speaker.jpg" alt="Card image cap">`;
+//     var speakerName = document.getElementById('speaker-name').innerText;
+//     var speakerPrice = document.getElementById('speaker-price').innerText;
+//     var speakerQuantity = document.getElementById('speaker-quantity').value;
+
+
+//     console.log('keyboard pic ' + speakerPic );
+//     console.log('keyboard Name ' + speakerName );
+//     console.log('keyboard price ' + speakerPrice );
+//     console.log('keyboard quantity ' + speakerQuantity );
+
+//     let speakerTotalPrice = speakerPrice * speakerQuantity;
+
+//     if(speakerCounter === 0) {
+
+//         var speakerObj = {
+
+//             speakerPic : speakerPic,
+//             speakerName : speakerName,
+//             speakerPrice :speakerPrice,
+//             speakerQuantity : speakerQuantity,
+//             speakerTotalPrice : speakerTotalPrice
+    
+//         };
+
+//         console.log('Test obj '+speakerObj.speakerName);
+
+//         cartData.push(speakerObj);
+//         console.log('Test cartData' +cartData[0].speakerQuantity);
+
+//      } else  {
+
+//         cartData.forEach((value) => {
+            
+//             value.speakerQuantity = (~~value.speakerQuantity) + (~~speakerQuantity);
+//             value.speakerTotalPrice +=  ((~~speakerQuantity.value) + (~~speakerQuantity)) * speakerPrice;
+//         });
+
+        
+//      }
+      
+
+ 
+
+//      speakerCounter += 1;
+
+     
+
+
+//     onLoadData(cartData);
+
+
+
+//     document.getElementById('speaker-quantity').value = "";
+
+
+// }
+
+
+
+// 
+
+
+
+
+
 
 function onLoadData(cartData) {
    
@@ -81,8 +204,12 @@ function onLoadData(cartData) {
         row += `<td>${value.keyboardPrice}$</td>`;
         row += `<td>${value.keyboardQuantity}</td>`;
         row += `<td>${value.keyboardTotalPrice}$</td>`;
-        row += `<td><button type="button"  id="display" onclick="edit(${value.id})" class="btn btn-outline-primary">Edit</button></td>`;
-        row += `<td><button type="button"  id="display" onclick="deleteData(${value.id})" class="btn btn-outline-danger mr-3">Delete</button></td></tr>`;
+        // row += `<td><button type="button"  id="display" onclick="edit(${value.id})" class="btn btn-outline-primary">Edit</button></td>`;
+        row += `<td><button type="button"  id="display" onclick="deleteData()" class="btn btn-outline-danger mr-3">Delete</button></td></tr>`;
     });
     return row;
 }
+
+// function deleteData()  {
+//     cartData.pop();
+// }

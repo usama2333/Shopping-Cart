@@ -52,31 +52,34 @@
 
         <!-- CArd 2 -->
 
-        <div class="card2-parent ">
+        <div class="card1-parent ">
             
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="./pics/speakers.jpg" alt="Card image cap">
+                <img class="card-img-top" id="speaker-pic" src="./pics/speakers.jpg" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title ">Portable Speaker</h5>
-                  <p class="card-price">Price 6$</p>
-
-                <div class="btn-row">
+                  <h5 class="card-title " id="speaker-name">Portable speakers</h5>
+                  <p class="card-price">Price <span id="speaker-price">6</span>$</p>
+                 
+                  <div class="btn-row">
                     <div>
-                        <button class="btn btn-primary card-btn ">Add to Cart</button>
+                        <button class="btn btn-primary card-btn " onclick="speakerFun()">Add to Cart</button>
                     </div>
                     
 
                     <div class="quantity-div">
                         <label class="quantity" for="quantity">Quantity:</label> <br>
-                        <input type="number" id="quantity" name="quantity" min="1" max="5">
+                        <input type="number" id="speaker-quantity" name="quantity" min="1" max="25">
                     </div>
 
                   </div>
+                  
+
+                 
+                  
                 </div>
               </div>
 
         </div>
-
                
         
         <!-- CArd2 ends here -->
