@@ -22,13 +22,17 @@
 .card-btn {
     cursor: pointer;
 }
-/* .card :hover{
+/* .card1-parent :hover{
   
     box-shadow: 1px 1px 1px 1px lightsteelblue;
     
      
 } */
-
+.img {
+    /* width: auto; */
+    width: 200px;
+    height: 90px;
+}
 .card-row {
     display: flex;
     flex-direction: row;
@@ -44,4 +48,9 @@
 .quantity-div {
     margin-left: 3rem;
     margin-top: -1rem;
+}
+
+.quantity {
+    color: grey;
+    opacity: .8;
 }
