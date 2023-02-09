@@ -2,9 +2,14 @@
 var cartData = [];
 var keyboardData = [];
 var speakerData = [];
+var handfreeData = [];
+var mouseData = [];
 
 var keyboardCounter = 0;
 var speakerCounter = 0;
+var handfreeCounter = 0;
+var mouseCounter = 0;
+
 
 function keyboardFun() {
 
@@ -94,6 +99,7 @@ function keyboardFun() {
 
 }
 
+// Speaker function
 
 function speakerFun() {
 
@@ -147,18 +153,9 @@ function speakerFun() {
         
 
         onLoadData(cartData);
-
-        // cartData.forEach((value) => {
-            
-        //     value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
-        //     value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
-        // });
-
-        
+  
      }
       
-
- 
 
     speakerCounter += 1;
 
@@ -174,70 +171,136 @@ function speakerFun() {
 }
 
 
-// function speakerFun() {
 
-//     var speakerPic = ` <img class="img" id="speaker-pic" src="./pics/speaker.jpg" alt="Card image cap">`;
-//     var speakerName = document.getElementById('speaker-name').innerText;
-//     var speakerPrice = document.getElementById('speaker-price').innerText;
-//     var speakerQuantity = document.getElementById('speaker-quantity').value;
+function earphoneFun() {
+
+    var keyboardPic = ` <img class="img" id="handfree-pic" src="./pics/handfree.jpg" alt="Card image cap">`;
+    var keyboardName = document.getElementById('handfree-name').innerText;
+    var keyboardPrice = document.getElementById('handfree-price').innerText;
+    var keyboardQuantity = document.getElementById('handfree-quantity').value;
 
 
-//     console.log('keyboard pic ' + speakerPic );
-//     console.log('keyboard Name ' + speakerName );
-//     console.log('keyboard price ' + speakerPrice );
-//     console.log('keyboard quantity ' + speakerQuantity );
+    // console.log('keyboard pic ' + keyboardPic );
+    // console.log('keyboard Name ' + keyboardName );
+    // console.log('keyboard price ' + keyboardPrice );
+    // console.log('keyboard quantity ' + keyboardQuantity );
 
-//     let speakerTotalPrice = speakerPrice * speakerQuantity;
+    let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
 
-//     if(speakerCounter === 0) {
+    if(handfreeCounter === 0) {
 
-//         var speakerObj = {
+        var handfreeObj = {
 
-//             speakerPic : speakerPic,
-//             speakerName : speakerName,
-//             speakerPrice :speakerPrice,
-//             speakerQuantity : speakerQuantity,
-//             speakerTotalPrice : speakerTotalPrice
+            keyboardPic : keyboardPic,
+            keyboardName : keyboardName,
+            keyboardPrice :keyboardPrice,
+            keyboardQuantity : keyboardQuantity,
+            keyboardTotalPrice : keyboardTotalPrice
     
-//         };
+        };
 
-//         console.log('Test obj '+speakerObj.speakerName);
 
-//         cartData.push(speakerObj);
-//         console.log('Test cartData' +cartData[0].speakerQuantity);
+        cartData.push(handfreeObj);
 
-//      } else  {
+        onLoadData(cartData);
 
-//         cartData.forEach((value) => {
-            
-//             value.speakerQuantity = (~~value.speakerQuantity) + (~~speakerQuantity);
-//             value.speakerTotalPrice +=  ((~~speakerQuantity.value) + (~~speakerQuantity)) * speakerPrice;
-//         });
+     } else  {
 
+
+        handfreeData = cartData.filter((value) => {
+
+            if(value.keyboardName === 'Lightening Earphones') {
+                value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+                value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+                return value;
+            }
+        });
+
+
+        // console.log('This is test speaker data ');
+        // speakerData.forEach((value) => {
+        //     console.log(value);
+        // })
         
-//      }
+
+        onLoadData(cartData);
+  
+     }
       
 
- 
-
-//      speakerCounter += 1;
-
-     
+     handfreeCounter += 1;
 
 
-//     onLoadData(cartData);
+    document.getElementById('handfree-quantity').value = "";
 
 
-
-//     document.getElementById('speaker-quantity').value = "";
-
-
-// }
+}
 
 
 
-// 
+function mouseFun() {
 
+    var keyboardPic = ` <img class="img" id="mouse-pic" src="./pics/mouse.jpg" alt="Card image cap">`;
+    var keyboardName = document.getElementById('mouse-name').innerText;
+    var keyboardPrice = document.getElementById('mouse-price').innerText;
+    var keyboardQuantity = document.getElementById('mouse-quantity').value;
+
+
+    // console.log('keyboard pic ' + keyboardPic );
+    // console.log('keyboard Name ' + keyboardName );
+    // console.log('keyboard price ' + keyboardPrice );
+    // console.log('keyboard quantity ' + keyboardQuantity );
+
+    let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+
+    if(mouseCounter === 0) {
+
+        var mouseObj = {
+
+            keyboardPic : keyboardPic,
+            keyboardName : keyboardName,
+            keyboardPrice :keyboardPrice,
+            keyboardQuantity : keyboardQuantity,
+            keyboardTotalPrice : keyboardTotalPrice
+    
+        };
+
+
+        cartData.push(mouseObj);
+
+        onLoadData(cartData);
+
+     } else  {
+
+
+        mouseData = cartData.filter((value) => {
+
+            if(value.keyboardName === 'BlueTooth Mouse') {
+                value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
+                value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
+                return value;
+            }
+        });
+
+
+        // console.log('This is test speaker data ');
+        // speakerData.forEach((value) => {
+        //     console.log(value);
+        // })
+        
+
+        onLoadData(cartData);
+  
+     }
+      
+
+     mouseCounter += 1;
+
+
+    document.getElementById('mouse-quantity').value = "";
+
+
+}
 
 
 

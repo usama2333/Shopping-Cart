@@ -87,30 +87,34 @@
 
                 <!-- CArd 3 -->
 
-                <div class="card3-parent ">
+                <div class="card1-parent ">
             
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="./pics/handfree.jpg" alt="Card image cap">
+                        <img class="card-img-top" id="handfree-pic" src="./pics/handfree.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title ">Lightening Earphones</h5>
-                          <p class="card-price">Price 1$</p>
+                          <h5 class="card-title " id="handfree-name">Lightening Earphones</h5>
+                          <p class="card-price">Price <span id="handfree-price">2</span>$</p>
+                         
                           <div class="btn-row">
                             <div>
-                                <button class="btn btn-primary card-btn ">Add to Cart</button>
+                                <button class="btn btn-primary card-btn " onclick="earphoneFun()">Add to Cart</button>
                             </div>
                             
         
                             <div class="quantity-div">
                                 <label class="quantity" for="quantity">Quantity:</label> <br>
-                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                <input type="number" id="handfree-quantity" name="quantity" min="1" max="25">
                             </div>
         
                           </div>
+                          
+        
+                         
+                          
                         </div>
                       </div>
         
-                </div>
-        
+                </div>        
                        
                 
                 <!-- CArd3 ends here -->
@@ -118,30 +122,34 @@
 
                 <!-- CArd 4 -->
 
-                <div class="card3-parent ">
+                <div class="card1-parent ">
             
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="./pics/mouse.jpg" alt="Card image cap">
+                        <img class="card-img-top" id="mouse-pic" src="./pics/mouse.jpg" alt="Card image cap">
                         <div class="card-body">
-                          <h5 class="card-title ">Bluetooth Mouse</h5>
-                          <p class="card-price">Price 2$</p>
+                          <h5 class="card-title " id="mouse-name">BlueTooth Mouse</h5>
+                          <p class="card-price">Price <span id="mouse-price">3</span>$</p>
+                         
                           <div class="btn-row">
                             <div>
-                                <button class="btn btn-primary card-btn ">Add to Cart</button>
+                                <button class="btn btn-primary card-btn " onclick="mouseFun()">Add to Cart</button>
                             </div>
                             
         
                             <div class="quantity-div">
                                 <label class="quantity" for="quantity">Quantity:</label> <br>
-                                <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                <input type="number" id="mouse-quantity" name="quantity" min="1" max="25">
                             </div>
         
                           </div>
+                          
+        
+                         
+                          
                         </div>
                       </div>
         
-                </div>
-        
+                </div> 
                        
                 
                 <!-- CArd4 ends here -->
