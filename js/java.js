@@ -36,7 +36,7 @@ function keyboardFun() {
         
 
         cartData.push(keyboardObj);
-        console.log('This is test first data ' + cartData[0].keyboardName);
+        // console.log('This is test first data ' + cartData[0].keyboardName);
 
         onLoadData(cartData);
 
@@ -51,10 +51,21 @@ function keyboardFun() {
             }
         });
 
-        console.log('This is test keyboard data ');
-        keyboardData.forEach((value) => {
-            console.log(value);
-        })
+
+
+        // console.log(typeof keyboardData);
+        console.log('This is cart Array');
+        console.log(cartData[0]);
+
+        console.log('This is keyboard Array');
+        console.log(keyboardData[0]);
+
+
+
+        // console.log('This is test keyboard data ');
+        // keyboardData.forEach((value) => {
+        //     console.log(value);
+        // })
 
 
         // console.log("This is test keyboard data " + keyboardData[0].keyboardName);
@@ -63,7 +74,7 @@ function keyboardFun() {
         //    
         // });
 
-        onLoadData(keyboardData);
+        onLoadData(cartData);
         
      }
       
@@ -135,7 +146,7 @@ function speakerFun() {
         })
         
 
-        onLoadData(speakerData);
+        onLoadData(cartData);
 
         // cartData.forEach((value) => {
             
