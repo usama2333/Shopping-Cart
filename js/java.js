@@ -68,20 +68,7 @@ function keyboardFun() {
 
         console.log('This is keyboard Array');
         console.log(keyboardData[0]);
-
-
-
-        // console.log('This is test keyboard data ');
-        // keyboardData.forEach((value) => {
-        //     console.log(value);
-        // })
-
-
-        // console.log("This is test keyboard data " + keyboardData[0].keyboardName);
-        // cartData.forEach((value) => {
-            
-        //    
-        // });
+        
 
         onLoadData(cartData);
         
@@ -91,11 +78,6 @@ function keyboardFun() {
  
 
     keyboardCounter += 1;
-
-
-
-    
-
 
 
     document.getElementById('keyboard-quantity').value = "";
@@ -165,11 +147,6 @@ function speakerFun() {
     speakerCounter += 1;
 
 
-
-    
-
-
-
     document.getElementById('speaker-quantity').value = "";
 
 
@@ -222,12 +199,6 @@ function earphoneFun() {
             }
         });
 
-
-        // console.log('This is test speaker data ');
-        // speakerData.forEach((value) => {
-        //     console.log(value);
-        // })
-        
 
         onLoadData(cartData);
   
@@ -290,12 +261,6 @@ function mouseFun() {
         });
 
 
-        // console.log('This is test speaker data ');
-        // speakerData.forEach((value) => {
-        //     console.log(value);
-        // })
-        
-
         onLoadData(cartData);
   
      }
@@ -311,30 +276,11 @@ function mouseFun() {
 
 
 
-
-// function deleteData(id){
-
-//     for(let i = 0 ; i< people.length; i++){
-
-//         if(people[i].id == id){
-
-//             people.splice(i,1);
-//         }
-//     }
-
-//     onLoadData(people);
-
-// }
-
-
-
-
 function onLoadData(cartData) {
    
      document.getElementById("body").innerHTML=createTable(cartData);
      
  }
-
 
 
  function deleteData(id) {
@@ -375,6 +321,3 @@ function onLoadData(cartData) {
 
 }
 
-// function deleteData()  {
-//     cartData.pop();
-// }
