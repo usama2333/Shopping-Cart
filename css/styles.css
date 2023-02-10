@@ -60,3 +60,7 @@
     max-width: 1380px;
     margin: auto;
 }
+
+#totalBillHeading {
+    text-align: right;
+}

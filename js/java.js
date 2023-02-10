@@ -10,6 +10,7 @@ var keyboardCounter = 0;
 var speakerCounter = 0;
 var handfreeCounter = 0;
 var mouseCounter = 0;
+var totalBill = 0;
 
 
 function keyboardFun() {
@@ -26,6 +27,8 @@ function keyboardFun() {
     console.log('keyboard quantity ' + keyboardQuantity );
 
     let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+
+     totalBill +=  keyboardTotalPrice;
 
     if(keyboardCounter === 0) {
 
@@ -116,6 +119,7 @@ function speakerFun() {
     // console.log('keyboard quantity ' + keyboardQuantity );
 
     let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+    totalBill += keyboardTotalPrice;
 
     if(speakerCounter === 0) {
 
@@ -187,6 +191,7 @@ function earphoneFun() {
     // console.log('keyboard quantity ' + keyboardQuantity );
 
     let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+    totalBill += keyboardTotalPrice;
 
     if(handfreeCounter === 0) {
 
@@ -253,6 +258,7 @@ function mouseFun() {
     // console.log('keyboard quantity ' + keyboardQuantity );
 
     let keyboardTotalPrice = keyboardPrice * keyboardQuantity;
+    totalBill += keyboardTotalPrice;
 
     if(mouseCounter === 0) {
 
@@ -339,8 +345,8 @@ function onLoadData(cartData) {
 
       if(cartData[i].keyboardPrice == id) {
 
-        console.log('Test price check' +cartData[i].keyboardPrice);
-        console.log('ifffffffffffffffffffffffffff');
+      totalBill -= cartData[i].keyboardTotalPrice;
+
         cartData.splice(i,1);
       }
    }
@@ -357,12 +363,16 @@ function onLoadData(cartData) {
         row += `<td>${value.keyboardPic}</td>`;
         row += `<td>${value.keyboardName}</td>`;
         row += `<td>${value.keyboardPrice}$</td>`;
-        row += `<td>${value.keyboardQuantity}</td>`;
+        row += `<td>${value.keyboardQuantity} X</td>`;
         row += `<td>${value.keyboardTotalPrice}$</td>`;
         // row += `<td><button type="button"  id="display" onclick="edit(${value.id})" class="btn btn-outline-primary">Edit</button></td>`;
         row += `<td><button type="button"  id="display" onclick="deleteData(${value.keyboardPrice})" class="btn btn-outline-danger mr-3">Delete</button></td></tr>`;
     });
+    document.getElementById('totalBill').innerHTML =`Total bill is ${totalBill}$` ;
     return row;
+
+    
+
 }
 
 // function deleteData()  {
