@@ -63,8 +63,6 @@
 
 #totalBillHeading {
     text-align: right;
-    
-   
 }
 
 
@@ -74,4 +72,38 @@
         margin-bottom: 2rem;
     }
             
+}
+
+
+/* Contact us section */
+
+
+
+.links{
+    
+}
+.links-h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.link-ul{
+    list-style-type:none;
+    line-height: 36px;
+    
+   
+}
+
+.lin ul li a{
+    font-family: lato;
+    color: #8c9597;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.contact-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

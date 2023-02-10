@@ -13,6 +13,14 @@ var mouseCounter = 0;
 var totalBill = 0;
 
 
+function contact() {
+    alert('Our team is contact you soon ......')
+}
+
+function about() {
+    alert('This is a shopping cart app in which you can select items you want and the items list and total bill is generated');
+}
+
 function keyboardFun() {
 
     var keyboardPic = ` <img class="img" id="keyboard-pic" src="./pics/keyboard.jpg" alt="Card image cap">`;
@@ -68,7 +76,7 @@ function keyboardFun() {
 
         console.log('This is keyboard Array');
         console.log(keyboardData[0]);
-        
+
 
         onLoadData(cartData);
         
