@@ -301,6 +301,32 @@ function onLoadData(cartData) {
 
       totalBill -= cartData[i].keyboardTotalPrice;
 
+        
+        
+        if(cartData[i].keyboardPrice == 5) {
+            keyboardCounter = 0;
+           
+            console.log('Check counter value ' + keyboardCounter);
+
+        }else if(cartData[i].keyboardPrice == 6) {
+
+            speakerCounter = 0;
+
+            console.log('Check Speaker value ' + speakerCounter);
+
+        }else if(cartData[i].keyboardPrice == 2) {
+
+            handfreeCounter = 0;
+
+            console.log('Check handfree value ' + handfreeCounter);
+
+        }else if(cartData[i].keyboardPrice == 3) {
+
+            mouseCounter = 0;
+
+            console.log('Check mouse value ' + mouseCounter);
+        }
+
         cartData.splice(i,1);
       }
    }
