@@ -4,6 +4,7 @@ var keyboardData = [];
 var speakerData = [];
 var handfreeData = [];
 var mouseData = [];
+var deleteDataArray = [];
 
 var keyboardCounter = 0;
 var speakerCounter = 0;
@@ -138,7 +139,7 @@ function speakerFun() {
 
         speakerData = cartData.filter((value) => {
 
-            if(value.keyboardName === 'Portable speakers') {
+            if(value.keyboardName === 'Portable Speakers') {
                 value.keyboardQuantity = (~~value.keyboardQuantity) + (~~keyboardQuantity);
                 value.keyboardTotalPrice +=  ((~~keyboardQuantity.value) + (~~keyboardQuantity)) * keyboardPrice;
                 return value;
@@ -305,12 +306,49 @@ function mouseFun() {
 
 
 
+// function deleteData(id){
+
+//     for(let i = 0 ; i< people.length; i++){
+
+//         if(people[i].id == id){
+
+//             people.splice(i,1);
+//         }
+//     }
+
+//     onLoadData(people);
+
+// }
+
+
+
 
 function onLoadData(cartData) {
    
      document.getElementById("body").innerHTML=createTable(cartData);
      
  }
+
+
+
+ function deleteData(id) {
+    console.log('Delete data function is called');
+    console.log('The deleting product is '+ id);
+
+   for(let i = 0 ; i< cartData.length ; i++)  {
+
+      if(cartData[i].keyboardPrice == id) {
+
+        console.log('Test price check' +cartData[i].keyboardPrice);
+        console.log('ifffffffffffffffffffffffffff');
+        cartData.splice(i,1);
+      }
+   }
+
+   onLoadData(cartData);
+
+};
+
 
  function createTable(cartData) {
    
@@ -322,7 +360,7 @@ function onLoadData(cartData) {
         row += `<td>${value.keyboardQuantity}</td>`;
         row += `<td>${value.keyboardTotalPrice}$</td>`;
         // row += `<td><button type="button"  id="display" onclick="edit(${value.id})" class="btn btn-outline-primary">Edit</button></td>`;
-        row += `<td><button type="button"  id="display" onclick="deleteData()" class="btn btn-outline-danger mr-3">Delete</button></td></tr>`;
+        row += `<td><button type="button"  id="display" onclick="deleteData(${value.keyboardPrice})" class="btn btn-outline-danger mr-3">Delete</button></td></tr>`;
     });
     return row;
 }
