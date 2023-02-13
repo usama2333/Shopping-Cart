@@ -88,7 +88,10 @@ function keyboardFun() {
     keyboardCounter += 1;
 
 
-    document.getElementById('keyboard-quantity').value = "";
+    if(keyboardQuantity > 1) {
+        document.getElementById('keyboard-quantity').value = 1; 
+    }
+    // document.getElementById('keyboard-quantity').value = "";
 
 
 }
@@ -155,7 +158,10 @@ function speakerFun() {
     speakerCounter += 1;
 
 
-    document.getElementById('speaker-quantity').value = "";
+    if(keyboardQuantity > 1) {
+        document.getElementById('speaker-quantity').value = 1; 
+    }
+    // document.getElementById('speaker-quantity').value = "";
 
 
 }
@@ -216,7 +222,10 @@ function earphoneFun() {
      handfreeCounter += 1;
 
 
-    document.getElementById('handfree-quantity').value = "";
+     if(keyboardQuantity > 1) {
+        document.getElementById('handfree-quantity').value = 1; 
+    }
+    // document.getElementById('handfree-quantity').value = "";
 
 
 }
@@ -277,7 +286,10 @@ function mouseFun() {
      mouseCounter += 1;
 
 
-    document.getElementById('mouse-quantity').value = "";
+     if(keyboardQuantity > 1) {
+        document.getElementById('mouse-quantity').value = 1; 
+    }
+    // document.getElementById('mouse-quantity').value = "";
 
 
 }
